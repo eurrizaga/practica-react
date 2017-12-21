@@ -1,0 +1,24 @@
+proyecto 1/node_modules
+proyecto 2/node_modules
+proyecto 3/node_modules
+proyecto 4/node_modules
+
+proyecto 1/bundle.js
+proyecto 1/npm-debug.log
+proyecto 1/.DS_Store
+
+proyecto 2/bundle.js
+proyecto 2/npm-debug.log
+proyecto 2/.DS_Store
+
+proyecto 3/bundle.js
+proyecto 3/npm-debug.log
+proyecto 3/.DS_Store
+
+proyecto 4/bundle.js
+proyecto 4/npm-debug.log
+proyecto 4/.DS_Store
+
+# IntelliJ
+*.iml
+/.idea
