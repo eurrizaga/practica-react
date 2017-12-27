@@ -12,12 +12,13 @@ class WeatherList extends Component {
         const humidities = cityData.list.map((weather) => weather.main.humidity);
         //const lon = cityData.city.coord.lon;
         //const lat = cityData.city.coord.lat;
-        const { lon, lat } = cityData.city.coord;
+        var { lon, lat } = cityData.city.coord;
 
         return (
             <tr key={name}>
                 <td>
                     <GoogleMap lon={lon} lat={lat} />
+                    <button className="btn btn-default" onClick={() => {lat = -38.0005; lon= -57.5448}}> Go to MDP </button>
                 </td>
                 <td><Chart data={temps} color="orange" units="K"/></td>
                 <td><Chart data={pressures} color="green" units="hPa"  /></td>

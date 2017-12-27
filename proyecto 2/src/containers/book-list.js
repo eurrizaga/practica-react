@@ -38,5 +38,5 @@ function mapDispatchToProps(dispatch){
     return bindActionCreators({ selectBook: selectBook}, dispatch);
 }
 
-// Proover BookList de componente a container. Necesita saber acerca de este nuevo método de dispatch, SelectBook. Hacerlo disponible como prop.
+// Proveer BookList de componente a container. Necesita saber acerca de este nuevo método de dispatch, SelectBook. Hacerlo disponible como prop.
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);

@@ -9,6 +9,10 @@ class GoogleMap extends Component{
 			}
 		})
 	}
+	componentWillReceiveProps(nextProps){
+		console.log(nextProps);
+		this.map.panTo({lat: nextProps.lat, lng: nextProps.lng});
+	}
 	render(){
 		// this.refs.map
 		return <div ref="map" />;
