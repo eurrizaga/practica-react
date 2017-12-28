@@ -1,25 +1,24 @@
-proyecto 1/node_modules
-proyecto 2/node_modules
-proyecto 3/node_modules
-proyecto 4/node_modules
-react-login/node_modules
+1 - base/node_modules
+2 - redux/node_modules
+3 - ajax/node_modules
+4 - abm/node_modules
 pruebahr/node_modules
 
-proyecto 1/bundle.js
-proyecto 1/npm-debug.log
-proyecto 1/.DS_Store
+1 - base/bundle.js
+1 - base/npm-debug.log
+1 - base/.DS_Store
 
-proyecto 2/bundle.js
-proyecto 2/npm-debug.log
-proyecto 2/.DS_Store
+2 - redux/bundle.js
+2 - redux/npm-debug.log
+2 - redux/.DS_Store
 
-proyecto 3/bundle.js
-proyecto 3/npm-debug.log
-proyecto 3/.DS_Store
+3 - ajax/bundle.js
+3 - ajax/npm-debug.log
+3 - ajax/.DS_Store
 
-proyecto 4/bundle.js
-proyecto 4/npm-debug.log
-proyecto 4/.DS_Store
+4 - abm/bundle.js
+4 - abm/npm-debug.log
+4 - abm/.DS_Store
 
 # IntelliJ
 *.iml
