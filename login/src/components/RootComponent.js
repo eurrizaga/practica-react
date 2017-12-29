@@ -3,12 +3,11 @@ import React, { Component } from 'react';
 //import { Link } from 'react-router-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import LoginForm from './LoginForm';
-import MainSection from './MainSection';
+import LoginForm from './sections/LoginForm';
+import MainSection from './sections/MainSection';
+import SecondarySection from './sections/SecondarySection';
 import PrivateRoute from '../route/PrivateRoute';
 import { getActiveUser } from '../actions';
-
-import { Grid } from 'semantic-ui-react'
 
 //Actions:
 //......
@@ -25,26 +24,14 @@ class newComponent extends Component {
                 )
             else
                 return(
-                    <Grid divided='vertically'>
-                        <Grid.Row columns={3}>
-                            <Grid.Column></Grid.Column>
-                            <Grid.Column>
-                                <div>
-                                    <Switch>
-                                        <Route path="/login" component={LoginForm} activeUser={this.props.activeUser}/>
-                                        <PrivateRoute path="/" component={MainSection} activeUser={this.props.activeUser}/>
-                                    </Switch>
-                                </div>
-                                
-                            </Grid.Column>
-                            <Grid.Column></Grid.Column>
-                            
-                        </Grid.Row>
+                    <div>
+                        <Switch>
+                            <Route path="/login" component={LoginForm} activeUser={this.props.activeUser}/>
+                            <PrivateRoute path="/secondary" component={SecondarySection} activeUser={this.props.activeUser}/>
+                            <PrivateRoute path="/" component={MainSection} activeUser={this.props.activeUser}/>
 
-                           
-                        
-                    </Grid>
-                    
+                        </Switch>
+                    </div>
                 )
         }
         return (

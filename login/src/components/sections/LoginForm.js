@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-//import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { login, setActiveUser } from '../actions';
-import { Button, Form, Checkbox } from 'semantic-ui-react'
+import { Button, Form, Checkbox } from 'semantic-ui-react';
+import { login, setActiveUser } from '../../actions';
 //Actions:
 //......
 class loginForm extends Component {
@@ -17,7 +16,7 @@ class loginForm extends Component {
         const { meta: { touched, error } } = field;
         const className = `form-group ${(touched && error) ? 'has-danger': ''}`
         return (
-            <Form.Field>
+            <Form.Field className={className}>
                 <label>{field.label}</label>
                 <input
                     type={field.type}
@@ -47,7 +46,7 @@ class loginForm extends Component {
     render(){
         const { handleSubmit } = this.props;
         return (
-            <div className="login-section">
+            <div className="ui container">
                 <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                     <Field
                         label="Email"
@@ -67,7 +66,7 @@ class loginForm extends Component {
                         <Checkbox label='Recordarme' />
                     </Form.Field>
                         
-                    <Button type="submit" className="btn btn-primary" disabled={this.state.loading}>Submit</Button>
+                    <Button primary disabled={this.state.loading}>Submit</Button>
                 </Form>
             </div>
         )

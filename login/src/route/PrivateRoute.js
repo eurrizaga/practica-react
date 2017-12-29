@@ -1,20 +1,18 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-/*export const PrivateRoute = ({ component: Component, ...rest }) => (
-    <Route {...rest} render={props => (
-        localStorage.getItem('user')
-            ? <Component {...props} />
-            : <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
-    )} />
-)
-*/
+import { Sidebar, Segment, Button } from 'semantic-ui-react';
+import  SidebarMenu from '../components/SidebarMenu';
 
 class PrivateRoute extends React.Component {
     constructor(props){
         super(props);
-        console.log(this);
         this.isAuthenticated = this.isAuthenticated.bind(this);
+        this.state = { 
+            visible: false, 
+            animation: 'overlay'
+           
+        };
     }
     isAuthenticated(){
         if (this.props.activeUser && this.props.activeUser.id){
@@ -22,13 +20,36 @@ class PrivateRoute extends React.Component {
         }
         return false;
     }
-    render() {
+    
+    toggleVisibility = () =>{ 
+        this.setState({ visible: !this.state.visible })
+    }
+    changeMenuType = (event) =>{
+        this.setState({animation: event.target.value, visible:false});
+    }
 
-       const {component: Component, ...rest} = this.props;
-       const renderRoute = props => {
+    render() {
+        //const { visible } = this.state;
+        const {component: Component, ...rest} = this.props;
+        const renderRoute = props => {
             if (this.isAuthenticated()) {
                 return (
-                    <Component {...props} activeUser={this.props.activeUser}/>
+                    <div style={{height: '100vh'}}>
+                        <Button onClick={this.toggleVisibility}>Menú</Button>
+                        <select placeholder='Tipo de menú' className="ui selection dropdown" onChange={this.changeMenuType.bind(this)}>
+                            <option value="overlay">Overlay</option>
+                            <option value="push">Push</option>
+                            <option value="scale down">Scale down</option>
+                        </select>
+                        <Sidebar.Pushable as={Segment}>
+                            <SidebarMenu visible={this.state.visible} animation={this.state.animation}/>
+                            <Sidebar.Pusher>
+                                <Segment basic>
+                                    <Component {...props} activeUser={this.props.activeUser}/>
+                                </Segment>
+                            </Sidebar.Pusher>
+                        </Sidebar.Pushable>
+                    </div>
                 );
             }
 
@@ -48,7 +69,6 @@ class PrivateRoute extends React.Component {
     }
 }
 function mapStateToProps(state){
-    console.log(state.activeUser);
     return { activeUser: state.activeUser }
 }
 export default connect(mapStateToProps)(PrivateRoute);
