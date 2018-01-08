@@ -3,10 +3,24 @@ import { reducer as formReducer } from 'redux-form';
 import LoginReducers from './login_reducers';
 import ActiveUserReducers from './active_user_reducer';
 
+
+function loading(state = null, action){
+    switch (action.type){
+        case 'LOADING': 
+            if (action){
+                return action.payload
+            }
+        default:
+            return state;
+            
+    }
+}
+
 const rootReducer = combineReducers({
   form: formReducer,
   login: LoginReducers,
-  activeUser: ActiveUserReducers
+  activeUser: ActiveUserReducers,
+  loading: loading
 });
 
 export default rootReducer;

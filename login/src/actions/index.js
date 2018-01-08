@@ -45,12 +45,19 @@ export function login(email, password, callback, callbackFail){
 }
 
 export function validToken(callback){
-    const body = {
-        panel_id: 2
-    }
-    const request = ajax.post(`/validToken`, body)
-        //.then((response)=>{ return response.data });
-    return request;
+    return new Promise((resolve, reject) => {
+        const body = {
+            panel_id: 2
+        }
+        const request = ajax.post(`/validToken`, body)
+            .then((response) => {
+                resolve(response.data.data);
+                callback();
+            });
+        return request;
+    });
+    
+    
             
 }
 export function setActiveUser(payload){
@@ -68,19 +75,27 @@ export function getActiveUser(callback){
     }
     else{
         if (userToken){
-            payload = validToken();
+            payload = validToken(callback);
         }
         else{
             payload = false;
         }
     }
-
+    payload.callback = callback;
     return {
         type:'SELECTED_USER',
         payload
     };
 
 }
+
+export function setLoading(payload){
+    return {
+        type: 'LOADING',
+        payload
+    }
+}
+
 export function logout(callback){
     ajax.post(`/logout`)
         .then((response) => {

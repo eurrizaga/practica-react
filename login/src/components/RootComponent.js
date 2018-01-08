@@ -7,30 +7,43 @@ import LoginForm from './sections/LoginForm';
 import MainSection from './sections/MainSection';
 import SecondarySection from './sections/SecondarySection';
 import PrivateRoute from '../route/PrivateRoute';
-import { getActiveUser } from '../actions';
+import { getActiveUser, setLoading } from '../actions';
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
 
 //Actions:
 //......
 class newComponent extends Component {
     componentWillMount(){
-        this.props.getActiveUser();
+        this.props.setLoading(true);
+        this.props.getActiveUser(() => {
+            this.props.setLoading(false);
+        });
     }
         
     render(){
+        const showLoader = () => {
+            if (this.props.loading){
+                return (
+                    <Dimmer active inverted>
+                        <Loader inverted>Loading</Loader>
+                    </Dimmer>
+                )
+            }
+                
+        }
         const renderFields = () => {
             if (!this.props.activeUser)
-                return (
-                    <div>Loading...</div>
-                )
+                <div>Loading...</div>
             else
                 return(
                     <div>
+                        {showLoader()}
                         <Switch>
                             <Route path="/login" component={LoginForm} activeUser={this.props.activeUser}/>
                             <PrivateRoute path="/secondary" component={SecondarySection} activeUser={this.props.activeUser}/>
                             <PrivateRoute path="/" component={MainSection} activeUser={this.props.activeUser}/>
-
                         </Switch>
+
                     </div>
                 )
         }
@@ -45,7 +58,8 @@ class newComponent extends Component {
     }
 }
 function mapStateToProps(state){
-    return { activeUser: state.activeUser }
+    console.log(state.activeUser);
+    return { activeUser: state.activeUser, loading: state.loading }
 }
 //export default connect(mapStateToProps)(newComponent);
 //export default connect(mapStateToProps, { fetchPosts  })(newComponent);
@@ -55,7 +69,7 @@ function mapStateToProps(state){
 //})(
 //    connect(null, { createPost })(PostsNew)
 //);
-export default connect(mapStateToProps, { getActiveUser })(newComponent);
+export default connect(mapStateToProps, { getActiveUser, setLoading })(newComponent);
     /*
     
     
