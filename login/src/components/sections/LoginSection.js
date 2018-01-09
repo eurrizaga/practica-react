@@ -66,7 +66,7 @@ class loginForm extends Component {
                         <Checkbox label='Recordarme' />
                     </Form.Field>
                         
-                    <Button primary disabled={this.state.loading}>Submit</Button>
+                    <Button primary disabled={this.state.loading}>Login</Button>
                 </Form>
             </div>
         )

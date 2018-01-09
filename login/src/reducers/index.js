@@ -10,6 +10,7 @@ function loading(state = null, action){
             if (action){
                 return action.payload
             }
+            break;
         default:
             return state;
             

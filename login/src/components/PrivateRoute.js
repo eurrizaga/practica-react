@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Sidebar, Segment, Button } from 'semantic-ui-react';
-import  SidebarMenu from '../components/SidebarMenu';
+import  SidebarMenu from './SidebarMenu';
 
 class PrivateRoute extends React.Component {
     constructor(props){

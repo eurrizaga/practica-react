@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Header, Image, Modal, List } from 'semantic-ui-react'
-import profilePicture from '../resources/img/a.jpg';
+import profilePicture from '../../resources/img/a.jpg';
 const userModal = ({ user }) => {
     return ( 
         <Modal trigger={<Button>View User info</Button>}>

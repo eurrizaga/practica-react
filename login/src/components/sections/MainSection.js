@@ -11,7 +11,7 @@ import {
         Label, 
         Message
     } from 'semantic-ui-react';
-import UserModal from '../UserModal.js';
+import UserModal from '../modals/UserModal.js';
 
 //Actions:
 //......
@@ -91,18 +91,17 @@ class mainSection extends Component {
                 <hr/>
                 <h2>Íconos</h2>
                 <i aria-hidden="true" className="help circle big icon"></i>
-                <h2></h2>
                 <div>
                     <Label as='a' image>
-                      <img src='/assets/images/avatar/small/joe.jpg' />
+                      <img src='/assets/images/avatar/small/joe.jpg' alt="" />
                       Joe
                     </Label>
                     <Label as='a' image>
-                      <img src='/assets/images/avatar/small/elliot.jpg' />
+                      <img src='/assets/images/avatar/small/elliot.jpg' alt="" />
                       Elliot
                     </Label>
                     <Label as='a' image>
-                      <img src='/assets/images/avatar/small/stevie.jpg' />
+                      <img src='/assets/images/avatar/small/stevie.jpg' alt=""/>
                       Stevie
                     </Label>
                 </div>

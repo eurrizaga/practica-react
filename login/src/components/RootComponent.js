@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 //import { Link } from 'react-router-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import LoginForm from './sections/LoginForm';
+import LoginForm from './sections/LoginSection';
 import MainSection from './sections/MainSection';
 import SecondarySection from './sections/SecondarySection';
-import PrivateRoute from '../route/PrivateRoute';
+import PrivateRoute from './PrivateRoute';
 import { getActiveUser, setLoading } from '../actions';
-import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
+import { Dimmer, Loader } from 'semantic-ui-react';
 
 //Actions:
 //......
@@ -33,7 +33,7 @@ class newComponent extends Component {
         }
         const renderFields = () => {
             if (!this.props.activeUser)
-                <div>Loading...</div>
+                return (<div>Loading...</div>);
             else
                 return(
                     <div>
@@ -58,7 +58,6 @@ class newComponent extends Component {
     }
 }
 function mapStateToProps(state){
-    console.log(state.activeUser);
     return { activeUser: state.activeUser, loading: state.loading }
 }
 //export default connect(mapStateToProps)(newComponent);
