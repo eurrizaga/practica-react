@@ -2,7 +2,16 @@
 2 - redux/node_modules
 3 - ajax/node_modules
 4 - abm/node_modules
-pruebahr/node_modules
+5 - login/node_modules
+6 - testing/node_modules
+
+
+1 - base/package-lock.json
+2 - redux/package-lock.json
+3 - ajax/package-lock.json
+4 - abm/package-lock.json
+5 - login/package-lock.json
+6 - testing/package-lock.json
 
 1 - base/bundle.js
 1 - base/npm-debug.log
@@ -19,6 +28,15 @@ pruebahr/node_modules
 4 - abm/bundle.js
 4 - abm/npm-debug.log
 4 - abm/.DS_Store
+
+5 - login/bundle.js
+5 - login/npm-debug.log
+5 - login/.DS_Store
+5 - login/semantic
+
+6 - testing/bundle.js
+6 - testing/npm-debug.log
+6 - testing/.DS_Store
 
 # IntelliJ
 *.iml
