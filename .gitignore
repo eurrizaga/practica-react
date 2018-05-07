@@ -4,6 +4,7 @@
 4 - abm/node_modules
 5 - login/node_modules
 6 - testing/node_modules
+7 - hoc/node_modules
 
 
 1 - base/package-lock.json
@@ -12,6 +13,7 @@
 4 - abm/package-lock.json
 5 - login/package-lock.json
 6 - testing/package-lock.json
+7 - hoc/package-lock.json
 
 1 - base/bundle.js
 1 - base/npm-debug.log
@@ -37,6 +39,10 @@
 6 - testing/bundle.js
 6 - testing/npm-debug.log
 6 - testing/.DS_Store
+
+7 - hoc/bundle.js
+7 - hoc/npm-debug.log
+7 - hoc/.DS_Store
 
 # IntelliJ
 *.iml
