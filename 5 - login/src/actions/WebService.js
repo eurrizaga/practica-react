@@ -45,13 +45,13 @@ function validToken(callback){
         const request = ajax.post(`/validToken`, body)
             .then((response) => {
                 resolve(response.data.data);
-            callback();
-        })
-        .catch((response) => {
-            clearToken();
-            reject(response);
-            callback();
-        });
+                callback();
+            })
+            .catch((response) => {
+                clearToken();
+                reject(response);
+                callback();
+            });
             return request;
     });
 }

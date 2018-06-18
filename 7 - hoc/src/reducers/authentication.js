@@ -5,3 +5,4 @@ export default function(state = false, action){
     }
     return state;
 }
+//actualiza el estado d ela aplicacion con el nuevo valor de payload

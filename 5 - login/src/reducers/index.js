@@ -7,9 +7,8 @@ import ActiveUserReducers from './active_user_reducer';
 function loading(state = null, action){
     switch (action.type){
         case 'LOADING': 
-            if (action){
-                return action.payload
-            }
+            return action.payload
+            
             break;
         default:
             return state;

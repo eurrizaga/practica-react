@@ -2,7 +2,7 @@ import webservice from './WebService';
 
 export const LOGIN_ACTION = 'LOGIN_ACTION';
 export function login(email, password, callback, callbackFail){
-    webservice.login(email, password, callback, callbackFail);
+    webservice.login(email, password, callback, callbackFail);// <-- Retorna una promesa que es resuelta por axios antes de llegar al reducer
     return {
         type: LOGIN_ACTION,
         payload: null
