@@ -6,6 +6,8 @@
 6 - testing/node_modules
 7 - hoc/node_modules
 8 - middleware/node_modules
+9 - auth/node_modules
+10 - hoc/node_modules
 
 
 1 - base/package-lock.json
@@ -48,6 +50,10 @@
 8 - middleware/bundle.js
 8 - middleware/npm-debug.log
 8 - middleware/.DS_Store
+
+10 - hoc/bundle.js
+10 - hoc/npm-debug.log
+10 - hoc/.DS_Store
 
 # IntelliJ
 *.iml
