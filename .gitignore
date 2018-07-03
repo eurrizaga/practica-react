@@ -5,7 +5,7 @@
 5 - login/node_modules
 6 - testing/node_modules
 7 - hoc/node_modules
-8 - middleware/node_modules
+middleware/node_modules
 9 - auth/node_modules
 10 - hoc/node_modules
 
@@ -17,6 +17,7 @@
 5 - login/package-lock.json
 6 - testing/package-lock.json
 7 - hoc/package-lock.json
+middleware/package-lock.json
 
 1 - base/bundle.js
 1 - base/npm-debug.log
@@ -47,9 +48,9 @@
 7 - hoc/npm-debug.log
 7 - hoc/.DS_Store
 
-8 - middleware/bundle.js
-8 - middleware/npm-debug.log
-8 - middleware/.DS_Store
+middleware/bundle.js
+middleware/npm-debug.log
+middleware/.DS_Store
 
 10 - hoc/bundle.js
 10 - hoc/npm-debug.log
